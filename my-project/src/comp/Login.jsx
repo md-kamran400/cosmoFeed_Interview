@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-
+import{useNavigate} from "react-router-dom"
 const Login = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const navigate = useNavigate()
 
   const handlechangeEmail = (e) => {
     setEmail(e.target.value);
@@ -16,6 +17,7 @@ const Login = () => {
     e.preventDefault();
     localStorage.setItem("email", email);
     localStorage.setItem("phone", phone);
+    navigate("/")
   };
 
   return (
